@@ -10,7 +10,9 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Main />
+        <main className="flex min-h-screen w-full flex-col items-center justify-center bg-rose-300 py-2">
+          <Main />
+        </main>
         <NextScript />
       </body>
     </Html>
