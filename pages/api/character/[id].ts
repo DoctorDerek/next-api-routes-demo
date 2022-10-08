@@ -14,17 +14,17 @@ export const fetchCharacter = async ({ id }: { id: number }) => {
 }
 
 export default async function characterAPI(
-  req: NextApiRequest,
-  res: NextApiResponse<Character>
+  request: NextApiRequest,
+  response: NextApiResponse<Character>
 ) {
-  await fetchCharacter({ id: Number(req?.query?.id) })
+  await fetchCharacter({ id: Number(request?.query?.id) })
     .then((result) => {
       const character = result || ({} as Character)
-      res.status(200).json(character)
+      response.status(200).json(character)
     })
     .catch((error: any) => {
       console.error(error)
-      res.status(500).json({
+      response.status(500).json({
         name: String(error),
         status: "Error",
         image: "https://http.cat/500.jpg",
