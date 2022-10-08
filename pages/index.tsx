@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Card from "@/components/Card"
 import { Character } from "@/pages/api/character/[id]"
 
-export default function CharacterById({ character }: { character: Character }) {
+export default function CharacterGrid() {
   const [minCharacterId, setMinCharacterId] = useState(1)
   const [maxCharacterId, setMaxCharacterId] = useState(10)
   const [characters, setCharacters] = useState<Character[]>([])
